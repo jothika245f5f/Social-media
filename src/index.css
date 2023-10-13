@@ -11,3 +11,233 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  
+}
+html{
+  font-size: 16px;
+}
+body{
+  min-height: 100vh;
+  font-family: 'DM Sans', sans-serif;
+  background-image: linear-gradient(
+    21deg, rgba(64, 83, 206, 0.3697003234675773) 68%, 
+    rgba(255, 206, 196, 0.5) 163%
+  ), linear-gradient(
+    163deg, rgba(49, 146, 170, 0.07944489965716128) 86%, 
+    rgba(239, 112, 138, 0.5) 40%
+  ), linear-gradient(
+    30deg, rgba(76, 79, 173, 0.6173675716587805) 22%, 
+    rgba(237, 106, 134, 0.5) 169%
+  ), linear-gradient(
+    48deg, rgba(31, 85, 147, 0.7323890641868473) 64%, 
+    rgba(247, 126, 132, 0.5) 43%
+  ); 
+  background-blend-mode: overlay,multiply,color,normal;
+  display: flex;
+ 
+}
+
+#root{
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App{
+  width: 100%;
+
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid;
+  box-shadow: 0px 0px 15px gray;
+}
+.Header, .Footer{
+  width: 100%;
+  /* background-color: aquamarine; */
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+.Header h1{
+  font-size: 1.5rem;
+}
+.Header svg{
+  font-size: 2rem;
+}
+
+.Footer{
+  padding: 0.75rem;
+  display: grid;
+  place-content: center;
+}
+
+.Nav{
+  width: 100%;
+  /* background-color: blue; */
+  display: flex;
+  justify-content: flex-start;
+ 
+}
+.searchForm {
+  width: 80%;
+  padding: 1rem 0.2rem 0.75rem;
+  border-bottom: 1px solid #eee;
+}
+
+.searchForm label {
+  position: absolute;
+  left: -99999px;
+}
+
+.searchForm input[type='text'] {
+  flex-grow: 1;
+  width: 100%;
+  min-height: 48px;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  outline: none;
+  background-color: #e2cbf8;
+}
+
+.Nav ul{
+  
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.Nav li{
+  padding: 1rem;
+}
+.Nav li a{
+  
+  text-decoration: none;
+}
+
+.Nav li:hover,
+.Nav li:focus,
+.Nav li:hover a,
+.Nav li:focus a{
+ 
+  color: blue;
+}
+.Nav li:hover a,
+.Nav li:focus a{
+  cursor: pointer;
+}
+
+.Home, .NewPost, .PostPage, .About, .Missing{
+  width:100%;
+  flex-grow: 1;
+  padding: 1rem;
+  overflow-y: auto;
+ 
+} 
+.post{
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid lightgrey;
+}
+.Home .post a{
+  text-decoration: none;
+}
+.Home .post a,
+.Home .post a:visited{
+  color: black;
+}
+.post:first-child{
+  margin-top: 0;
+}
+.post:last-child{
+  margin-top: 0;
+}
+.postDate{
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+.postBody{
+  margin: 1rem 0;
+}
+.newPostForm{
+  display: flex;
+  flex-direction: column;
+}
+.newPostForm label{
+  margin-top: 1rem;
+}
+.newPostForm input[type='text'],
+.newPostForm textarea{
+  font-family: 'Courier New', Courier, monospace;
+  width: 100%;
+  min-height: 48px;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  margin-right: 0.25rem;
+  outline: none;
+}
+.newPostForm textarea{
+  height: 100px;
+}
+.newPostForm button{
+  margin-top: 1rem;
+  height: 48px;
+  min-height: 48px;
+  border-radius: 10px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.Missing h2, .PostPage h2,
+.Missing p, .PostPage p{
+  margin-bottom: 1rem;
+}
+.PostPage button{
+  height: 48px;
+  min-height: 48px;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: red;
+  color: #eee;
+  cursor: pointer;
+}
+.statusMsg{
+  margin-top: 2rem;
+}
+
+@media only screen and (min-width: 610px){
+  html{
+      font-size: 12px;
+  }
+  .Header h1{
+      font-size: 2rem;
+  }
+  .Nav{
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+  }
+  .Nav ul{
+    text-align: right;
+  }
+  .Nav li:hover,
+.Nav li:focus,
+.Nav li:hover a,
+.Nav li:focus a{
+  background-color: antiquewhite;
+  color: blue;
+}
+
+}
